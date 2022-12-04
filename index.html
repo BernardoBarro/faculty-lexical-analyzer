@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Analisador Léxico
+    </title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#" class="brand-logo margin-left-default">Analisador Léxico</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container margin-top-default">
+
+            <div class="card hoverable padding-default">
+                <span class="card-title margin-left-default">
+                    Adicione aqui suas palavras
+                </span>
+                <div class="card-content">
+                    <div class="chips chips-placeholder" id="chips"></div>
+                </div>
+                <div class="card-action">
+                    <button class="btn blue lighten-1 waves-effect waves-light" type="submit"
+                        onclick="lexicalController.updateTable();" name="action">Preencher Tabela</button>
+                </div>
+            </div>
+
+            <div class="card hoverable padding-default">
+                <span class="card-title margin-left-default">
+                    Valida palavra
+                </span>
+                <div class="card-content">
+                    <div class="input-field">
+                        <input id="word" type="text">
+                        <label for="word">Digite uma palavra</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card hoverable padding-default">
+                <span class="card-title margin-left-default">
+                    Tabela de estados
+                </span>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="javascript:lexicalController.clear();" style="color: black">Limpar Analisador</a></li>
+                </ul>
+                <div class="card-content">
+                    <table class="table responsive-table striped" id="lexical-table">
+                        <thead>
+                            <tr>
+                                <th>&delta;</th>
+                                <th>A</th>
+                                <th>B</th>
+                                <th>C</th>
+                                <th>D</th>
+                                <th>E</th>
+                                <th>F</th>
+                                <th>G</th>
+                                <th>H</th>
+                                <th>I</th>
+                                <th>J</th>
+                                <th>K</th>
+                                <th>L</th>
+                                <th>M</th>
+                                <th>N</th>
+                                <th>O</th>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>S</th>
+                                <th>T</th>
+                                <th>U</th>
+                                <th>V</th>
+                                <th>W</th>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>Z</th>
+                            </tr>
+                        </thead>
+                        <tbody class="scale-transition"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="Controllers/lexicalController.js"></script>
+<script src="Controllers/chipsController.js"></script>
+<script>
+    const lexicalController = new LexicalController();
+    lexicalController.init();
+</script>
+</html>
